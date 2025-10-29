@@ -1,0 +1,88 @@
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/bg1.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(40%);
+  z-index: -1;
+}
+
+.container h1 {
+  margin-top: 20px;
+  color: beige;
+  text-shadow: 0 0 8px #a28c70;
+  /* text-shadow: 0 0 8px #F5F5DC */
+}
+.container h2 a{
+  color: white;
+  right: 10px;
+  top: 20px;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 27px;
+  position: absolute;
+  background-color: #1474db;
+  border-radius: 40%;
+  padding: 7px; 
+  text-decoration: none;
+}
+.container h2 a:hover{
+  text-decoration: underline;
+}
+.container p {
+  color: whitesmoke;
+  font-size: 45px;
+  font-family: bembo;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.card{
+  top: 40px;
+  border-radius: 10%;
+  background-color: beige;
+}
+.card input {
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.card input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.btn-primary{
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  background-color: #007bff;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+.card p a {
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 5px;
+  transition: color 0.3s ease;
+}
+
+.card p a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+} 

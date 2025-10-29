@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %} {% load static %}
+    <script src="https://kit.fontawesome.com/b11ccc47c6.js"crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'CSS/mainpage2.css' %}" />
+  </head>
+  <body>
+    <div class="header">
+      <h1><i class="fa-solid fa-graduation-cap"></i> Opportunities</h1>
+      <nav><a href="{% url 'home' %}">Home</a></nav>
+      <button><a href="{% url 'admin:login' %}">Post Jobs</a></button>
+    </div>
+    <div class="image" style="position: relative;">
+    <img src="{% static 'images/imgformain2.jpg' %}" class="img-fluid" alt="...">
+    <pre><h3>
+    Let's hire your 
+    next great
+    candidate Fast.</h3>
+    </pre>
+    <p>No matter what skills, experience or qualifications you are looking for, you will find the right candidates here.</p>
+    </div>
+    <h2 style="text-align: center; margin-top: 40px; font-size: 35px; margin-bottom: 40px;">Our Features</h2>
+    <section class="features">
+  <div class="feature">
+   <i class="fa-regular fa-pen-to-square" style="font-size: 70px;"></i>
+    <h3>Post Job Vacancies</h3>
+    <p>Create and publish job listings quickly and easily. Reach thousands of qualified candidates looking for opportunities in your industry.</p>
+  </div>
+  <div class="feature">
+    <i class="fa-solid fa-users-viewfinder" style="font-size: 80px;"></i>
+    <h3>View Applications</h3>
+    <p>Access all candidate applications in one place. Review resumes, profiles, and qualifications to find the best fit for your company.</p>
+  </div>
+  <div class="feature">
+  <i class="fa-solid fa-gear"  style="font-size: 80px;"></i>
+    <h3>Manage Job Listings</h3>
+    <p>Edit, update, or remove your job posts anytime. Keep your listings current and manage multiple positions from a single dashboard.</p>
+  </div>
+  <div class="feature">
+   <i class="fa-solid fa-envelope"  style="font-size: 80px;"></i>
+    <h3>Contact Candidates</h3>
+    <p>Connect directly with potential hires through our messaging system. Schedule interviews and communicate efficiently with applicants.</p>
+  </div>
+</section> 
+    </div>
+  </body>
+</html>

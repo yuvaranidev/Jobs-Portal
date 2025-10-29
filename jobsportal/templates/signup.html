@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+    <script src="https://kit.fontawesome.com/b11ccc47c6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'CSS/signup.css' %}">
+</head>
+<body>
+    <div class="bg-image"></div>
+    <div class="container">
+    <h1><i class="fa-solid fa-graduation-cap"></i>Opportunities</h1></div>
+  <center>
+  <div class="card shadow p-4" style="width: 400px;">
+    <h3 class="text-center mb-3">Signup</h3>
+
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-info">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+      {% csrf_token %}
+      <div class="mb-3 mt-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" name="username" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" name="email" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Signup</button>
+    </form>
+
+    <p class="text-center mt-3">
+      Already have an account?
+      <a href="{% url 'home' %}">Login here</a>
+    </p>
+  </div></center>
+</body>
+</html>

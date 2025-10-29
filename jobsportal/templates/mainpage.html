@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %} {% load static %}
+    <script src="https://kit.fontawesome.com/b11ccc47c6.js"crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'CSS/mainpage.css' %}" />
+  </head>
+  <body>
+    <div class="header">
+      <h1><i class="fa-solid fa-graduation-cap"></i> Opportunities</h1>
+      <h4 style="font-family:serif">Welcome, {{ request.user.username }}  🎉</h4>
+      <ul class="nav justify-content-end">
+        <li class="nav-item"> 
+          <a class="nav-link active" aria-current="page" href="{% url 'main' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'jobs' %}">Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'applied_jobs' %}">Applied Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-danger" style="margin-top: 8px;" href="{% url 'logout' %}">Logout</a>
+        </li>
+
+      </ul>
+    </div>
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img src="{% static 'images/slide.jpg' %}" class="d-block w-100" height="550px" style="filter: brightness(60%)"/>
+          <div class="carousel-caption">
+            <h2>Find Your Dream Job</h2>
+            <p style="font-size: 20px">Explore thousands of opportunities and take the next step in your career.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="{% static 'images/slide2.jpg' %}" class="d-block w-100" height="550px"style="filter: brightness(60%)"/>
+          <div class="carousel-caption">
+            <h2>Hire the Right Talent</h2>
+            <p style="font-size: 20px">Connect with skilled professionals ready to make an impact in your company.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="{% static 'images/slide3.jpg' %}" class="d-block w-100"height="550px" style="filter: brightness(60%)"/>
+          <div class="carousel-caption">
+            <h2>Grow with Confidence</h2>
+            <p style="font-size: 20px">Enhance your career with expert tips, job alerts, and personalized guidance.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev"type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <h2 style="text-align: center; margin-top: 40px; font-size: 35px; margin-bottom: 40px;">Our Features</h2>
+    <section class="features">
+  <div class="feature">
+    <i class="fa-solid fa-magnifying-glass" style="font-size: 70px;"></i>
+    <h3>Search Millions of Jobs</h3>
+    <p>Discover a wide range of verified job opportunities across various industries.
+       Find the perfect role that matches your skills, goals, and experience.</p>
+  </div>
+  <div class="feature">
+    <i class="fa-solid fa-clipboard" style="font-size: 70px;"></i>
+    <h3>Apply for Jobs Online</h3>
+    <p>Submit your applications directly through our platform. Track your application status and get updates on your job submissions.</p>
+  </div>
+  <div class="feature">
+    <i class="fa-solid fa-user" style="font-size: 70px;"></i>
+    <h3>Create Your Profile</h3>
+    <p>Build a comprehensive profile with your resume, skills, and experience. Make it easier for employers to find and contact you.</p>
+  </div>
+  <div class="feature">
+    <i class="fa-regular fa-bookmark" style="font-size: 70px;"></i>
+    <h3>Save Favorite Jobs</h3>
+    <p>Bookmark interesting job posts for later. Keep track of opportunities you want to apply to and never miss a chance.</p>
+  </div>
+</section> 
+    </div>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+<script src="https://kit.fontawesome.com/b11ccc47c6.js" crossorigin="anonymous"></script>
+{% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %} {% load static %}
+<style>
+  .nav-link {
+    color: #09293f;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 20px;
+  }
+  h3 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
+    color: #09293f;
+  }
+  .tip-box {
+    width: 25%;
+    background: #fff8dc;
+    border-left: 5px solid #ffa500;
+    padding: 20px;
+    border-radius: 12px;
+    position: absolute;
+    right: 25%;
+    top: 25%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<body style="background-color: beige">
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="{% url 'main' %}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'jobs' %}">Jobs</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'applied_jobs' %}">Applied Jobs</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="btn btn-danger" style="margin-top: 14px" href="{% url 'logout' %}">Logout</a>
+    </li>
+  </ul>
+
+  {% block content %}
+  <h3>Your Applied Jobs <i class="fa-solid fa-thumbs-up"></i></h3>
+  {% for app in applications %}
+  <div class="card mb-3 shadow-sm" style="width: 350px; margin-left: 80px;">
+    <div class="card-body">
+      <h5>{{ app.job.title }}</h5>
+      <p><strong style="color: rgb(99, 25, 25); font-family: Verdana, Geneva, Tahoma, sans-serif;">{{ app.job.company }}</strong> – {{ app.job.location }}</p>
+      <small class="text-muted">Applied on {{ app.applied_on }}</small>
+    </div>
+  </div>
+  {% empty %}
+  <p>You haven’t applied for any jobs yet.</p>
+  {% endfor %} {% endblock %}
+  
+  <div class="tip-box">
+    <h5>Career Tip <i class="fa-regular fa-lightbulb"></i></h5>
+    <p>
+      Keep learning and applying! Update your resume regularly and tailor it for
+      each job role to stand out.
+    </p>
+    <hr/>
+    <p><em>“Success doesn’t come to you, you go to it.”</em></p>
+  </div>
+</body>
+</html>

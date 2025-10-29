@@ -1,0 +1,52 @@
+h1 {
+  display: inline-block;
+  color: rgb(34, 36, 75);
+  text-shadow: 0 0 8px rgb(185, 222, 230);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+}    
+.nav-link{
+  color: #09293f;
+  font-weight: 500;
+  font-size: 20px;
+}
+.features {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 60px 10%;
+  background-color: #fff;
+  gap: 30px;
+}
+
+.feature {
+  flex: 1 1 220px;
+  max-width: 250px;
+}
+
+.feature i {
+  font-size: 70px;
+  color: #0a3d62;
+  margin-bottom: 20px;
+}
+
+.feature h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.feature p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+} 
+

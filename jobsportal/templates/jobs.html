@@ -1,0 +1,70 @@
+<html>
+<script src="https://kit.fontawesome.com/b11ccc47c6.js" crossorigin="anonymous"></script>
+ {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %} {% load static %}   
+ <style>
+    .nav-link{
+      color: #09293f;
+      font-size: 20px;
+      font-weight: 500;
+      padding: 20px;
+    }
+    h3{
+      text-align: center;
+      font-size: 30px;
+      color: #09293f;
+      text-decoration: underline;
+      margin-bottom: 20px;
+    }
+    body{
+      background-color: beige;
+    }
+    h5{
+      color: black;
+      font-size: 25px;
+      font-weight: 400;
+    }
+    .p{
+      color: rgb(99, 25, 25);
+      font-size: 18px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+ </style>
+ <body>
+   <ul class="nav justify-content-end">
+        <li class="nav-item"> 
+          <a class="nav-link active" aria-current="page" href="{% url 'main' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'jobs' %}">Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'applied_jobs' %}">Applied Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-danger" style="margin-top: 14px;" href="{% url 'logout' %}">Logout</a>
+        </li>
+
+      </ul>
+{% block content %}
+<h3>Available Jobs <i class="fa-solid fa-circle-check"></i></h3>
+{% for job in jobs %}
+
+<div class="card mb-4" style="width: 31%; height: 230px; margin: 9px;  display: inline-flex">
+  <div class="card-body">
+    <h5 class="card-title">{{ job.title }}</h5>
+    <p class="card-text"><strong class="p">{{ job.company }}</strong> – {{ job.location }}</p>
+    <p>{{ job.description }}</p>
+    <a href="{% url 'apply_job' job.id %}" class="btn btn-primary">Apply</a>
+  </div>
+</div>
+
+{% empty %}
+<p>No jobs available at the moment.</p>
+{% endfor %}
+{% endblock %}
+
+ </body>
+</html>
