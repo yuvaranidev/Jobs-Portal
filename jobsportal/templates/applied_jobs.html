@@ -25,6 +25,21 @@
     top: 25%;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   }
+  .apply{
+    font-size: 25px;
+    margin-left: 15%;
+  }
+  .fa-hand-point-right{
+    font-size: 28px;
+    margin-right: 25px;
+    display: inline-block;
+    animation: moveRight 1.5s ease-in-out infinite;
+  }
+  @keyframes moveRight{
+    0% {transform: translateX(0);}
+    50% {transform: translateX(20px);}
+    100% {transform: translateX(0);}
+  }
 </style>
 
 <body style="background-color: beige">
@@ -57,7 +72,8 @@
     </div>
   </div>
   {% empty %}
-  <p>You haven’t applied for any jobs yet.</p>
+  <p style="font-size: 30px; margin-top: 7%; margin-left: 4%;">You haven’t applied for any jobs yet <i class="fa-regular fa-face-frown"></i>.</p>
+  <a class="apply" href="{% url 'jobs' %}"> <i class="fa-solid fa-hand-point-right"></i>Apply</a>
   {% endfor %} {% endblock %}
   
   <div class="tip-box">
@@ -67,7 +83,7 @@
       each job role to stand out.
     </p>
     <hr/>
-    <p><em>“Success doesn’t come to you, you go to it.”</em></p>
+    <p><em>“Success doesn’t come to you, you go to it.”  <i class="fa-solid fa-trophy"></i></em></p>
   </div>
 </body>
 </html>
